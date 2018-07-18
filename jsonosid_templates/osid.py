@@ -1081,6 +1081,8 @@ class OsidForm:
                 'formatTypeId': str(inpt.format_type),
                 'scriptTypeId': str(inpt.script_type)
             }
+        elif isinstance(inpt, dict):
+            display_text = inpt
         elif self._is_valid_string(inpt, metadata):
             display_text = dict(metadata.get_default_string_values()[0])
             display_text.update({'text': inpt})
